@@ -1,0 +1,17 @@
+{
+	"version": 2,
+	"name": "zeit-now-python",
+	"builds": [
+		{
+			"src": "zeit_now/wsgi.py",
+			"use": "@ardnt/now-python-wsgi",
+			"config": { "maxLambdaSize": "15mb" }
+		}
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "zeit_now/wsgi.py"
+		}
+	]
+}
